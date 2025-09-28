@@ -1,0 +1,5 @@
+Intestatario: Mario Rossi
+Saldo iniziale: 500.00
+Dopo deposito: 700.00
+Dopo prelievo: 600.00
+Saldo insufficiente 
