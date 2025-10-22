@@ -4,7 +4,7 @@ public class CodiceBarreTest
     {
         int numero = 0;
         CodiceBarre codiceBarre = new CodiceBarre();
-       
+
         String result = codiceBarre.toCodiceBarre(84081);
         System.out.println(result);
          numero = codiceBarre.fromCodiceBarre("| |::|: :|::| ||::: |::|: :::|| |:|:: |");
