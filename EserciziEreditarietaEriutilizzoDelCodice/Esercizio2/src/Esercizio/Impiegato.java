@@ -22,11 +22,13 @@ public class Impiegato extends Persona
     }
 
     //sovrascrittura metodi della classe object
+    @Override
     public String toString()
     {
         return super.toString() + "[incarico=" + incarico + "]";
     }
 
+    @Override
     public boolean  equals(Object obj)
     {
         if(!super.equals(obj)) return false;
@@ -34,6 +36,7 @@ public class Impiegato extends Persona
         return incarico.equals(other.incarico);
     }
 
+    @Override
     public Impiegato clone()
     {
         return (Impiegato) super.clone(); // invoca il metodo clone di object

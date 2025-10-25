@@ -24,11 +24,13 @@ public class Manager extends Impiegato
 
     // sovrascrittura metodi object
 
+    @Override
     public String toString()
     {
         return super.toString() + "[area_competenza="+area_competenza+"]";
     }
 
+    @Override
     public boolean equals(Object obj)
     {
         if(!super.equals(obj))return false;
@@ -36,6 +38,7 @@ public class Manager extends Impiegato
         return area_competenza.equals(other.area_competenza);
     }
 
+    @Override
     public Manager clone()
     {
         return (Manager)super.clone();

@@ -51,6 +51,7 @@ public class Persona implements Cloneable
         //return getClass().getSimpleName()  == stampera solo il nome della classe senza specificare il packge
     }
 
+    @Override
     public boolean equals(Object obj)
     {
         if(obj == null)return false;
@@ -59,6 +60,7 @@ public class Persona implements Cloneable
         return nome.equals(other.nome) && retribuzione == other.retribuzione  && numero_conto.equals(other.numero_conto);
     }
 
+    @Override
     public Persona clone()
     {
         try {
