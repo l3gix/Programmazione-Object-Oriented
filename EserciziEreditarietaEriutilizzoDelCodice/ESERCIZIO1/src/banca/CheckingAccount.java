@@ -37,4 +37,22 @@ public class CheckingAccount extends BanckAccount
             super.withdraw(fees);
         }
     }
+
+    public String toString()
+    {
+        return getClass().getName()+"[trantransactionCounter="+transactionCounter+"]";
+    }
+
+    public boolean equals(Object obj)
+    {
+        if(!super.equals(obj))return false;
+        CheckingAccount checkingAccount = (CheckingAccount)obj;
+        return  checkingAccount.transactionCounter == transactionCounter;
+
+    }
+
+    public SavingAccount clone()
+    {
+        return (SavingAccount) super.clone();
+    }
 }
