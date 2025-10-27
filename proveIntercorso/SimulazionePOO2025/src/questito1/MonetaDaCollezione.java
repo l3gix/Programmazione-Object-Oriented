@@ -53,7 +53,8 @@ public class MonetaDaCollezione extends MonetaConiata
     public MonetaDaCollezione clone()
     {
         MonetaDaCollezione m = (MonetaDaCollezione) super.clone();
-        m.certificato = certificato;
+        
+        //m.certificato = certificato; // sbagliato
         return m;
     }
 }
