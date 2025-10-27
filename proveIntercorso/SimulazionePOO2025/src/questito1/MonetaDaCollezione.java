@@ -5,7 +5,7 @@ public class MonetaDaCollezione extends MonetaConiata
     private Certificato certificato;
     private int valutazione;
 
-    public MonetaDaCollezione(int valore, String anno, Ente ente,Certificato certificato)
+    public MonetaDaCollezione(int valore, String anno, Ente ente,Certificato certificato, int valutazione)
     {
         super(valore, anno, ente);
         this.certificato = certificato;

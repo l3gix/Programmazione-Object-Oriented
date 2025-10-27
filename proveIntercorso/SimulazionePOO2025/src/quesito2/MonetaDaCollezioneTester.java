@@ -10,7 +10,7 @@ public class MonetaDaCollezioneTester
     {
         MonetaDaCollezione m = new MonetaDaCollezione(2,"2010",
                 new Ente("zecca stato","via roma","zecca che conia le monete"),
-                new Certificato(111,new Ente("zecca di stato","via napoli","ente certificato"),"descrione certficazione"));
+                new Certificato(111,new Ente("zecca di stato","via napoli","ente certificato"),"descrione certficazione"),10);
 
         System.out.println(m);
 
