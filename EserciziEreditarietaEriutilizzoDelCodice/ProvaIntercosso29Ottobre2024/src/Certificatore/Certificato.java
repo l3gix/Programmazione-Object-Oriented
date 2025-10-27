@@ -2,13 +2,13 @@ package Certificatore;
 
 import Ente.Ente;
 
-public final class Certificatore
+public final class Certificato
 {
     private int codice;
     private Ente ente;
     private String descrizine;
 
-    public  Certificatore(int codice, Ente ente, String descrizine)
+    public Certificato(int codice, Ente ente)
     {
         this.codice = codice;
         this.ente = ente.clone();
