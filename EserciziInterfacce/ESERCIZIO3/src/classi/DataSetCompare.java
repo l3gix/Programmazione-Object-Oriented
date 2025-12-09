@@ -29,7 +29,9 @@ public class DataSetCompare
         System.out.println(m.getMeasurable());
 
         if(min == null)min = m;
-        else if(min.comparable(m.getMeasurable()) > 0) System.out.println(m.getMeasurable());
+        else if(min.comparable(m) > 0) min = m;
+        if(max == null)max = m;
+        else if(max.comparable(m) < 0) max = m;
     }
 
 }

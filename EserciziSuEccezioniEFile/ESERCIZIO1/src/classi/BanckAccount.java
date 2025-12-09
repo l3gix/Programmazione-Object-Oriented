@@ -1,11 +1,16 @@
 package classi;
 
-import anagrafica.Cliente;
+import eccezioni.IllegalIndexExcpetion;
+import eccezioni.IllegalSaldoExcpetion;
+import eccezioni.IllegalSommaExcpetion;
 
-public class BanckAccount implements Cloneable
+import java.io.Serializable;
+
+public class BanckAccount implements Cloneable, Serializable
 {
+    private static final long serialVersionUID = 42L;
     private double balance;
-    private Cliente intestatario;
+
     /**
      * Contstructs a bank account with a zero balance
      */
@@ -18,8 +23,9 @@ public class BanckAccount implements Cloneable
      * Contructs a bank account with a given balance
      * @param initialBalance the initial balance
      */
-    public BanckAccount(double initialBalance)
+    public BanckAccount(double initialBalance) throws IllegalSaldoExcpetion
     {
+        if(initialBalance < 0) throw new IllegalSaldoExcpetion("Somma non consentita"); // eccezione controllata
         this.balance = initialBalance;
     }
 
@@ -29,6 +35,7 @@ public class BanckAccount implements Cloneable
      */
     public void deposit(double amount)
     {
+        if(amount < 0) throw new IllegalSommaExcpetion("Somma non valida");
         balance += amount;
     }
 
@@ -38,6 +45,7 @@ public class BanckAccount implements Cloneable
      */
     public void withdraw(double amount)
     {
+        if(amount < 0 || amount > balance) throw new IllegalIndexExcpetion("Range non valido ");
         balance -= amount;
     }
 
@@ -50,19 +58,10 @@ public class BanckAccount implements Cloneable
         return balance;
     }
 
-    public Cliente getIntestatario()
-    {
-        return intestatario.clone();
-    }
-
-    public void setIntestatario(Cliente anIntestatario)
-    {
-        intestatario = anIntestatario.clone();
-    }
 
     public String toString()
     {
-        return getClass().getName() + "[balance="+balance+",intestatario="+intestatario+"]";
+        return getClass().getName() + "[balance="+balance+"]";
     }
 
     public boolean equals(Object obj)
@@ -70,16 +69,13 @@ public class BanckAccount implements Cloneable
         if(obj == null)return false;
         if(getClass() != obj.getClass())return false;
         BanckAccount other = (BanckAccount)obj;
-        return balance==other.balance && intestatario.equals(other.intestatario);
+        return balance==other.balance ;
     }
 
     public BanckAccount clone()
     {
         try {
             BanckAccount clone = (BanckAccount)super.clone();
-            if (this.intestatario != null) {
-                clone.intestatario = this.intestatario.clone();
-            }
             return clone;
         } catch (CloneNotSupportedException e) {
             return null;

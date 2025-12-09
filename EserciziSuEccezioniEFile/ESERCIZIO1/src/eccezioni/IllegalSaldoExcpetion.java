@@ -1,4 +1,11 @@
 package eccezioni;
 
-public class IllegalSaldoExcpetion {
+//Eccezione controllata
+public class IllegalSaldoExcpetion extends Exception{
+    public IllegalSaldoExcpetion(){
+        super("Instaziazione Saldo negativo");
+    }
+    public IllegalSaldoExcpetion(String message){
+        super(message);
+    }
 }

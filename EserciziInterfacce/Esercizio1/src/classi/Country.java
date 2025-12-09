@@ -1,11 +1,11 @@
 package classi;
 
-public class Country implements Comparable<Country>
+public class Country implements Comparable
 {
     private String nome;
-    private double superficie;
+    private int superficie;
 
-    public Country(String nome, double superficie) {
+    public Country(String nome, int superficie) {
         this.nome = nome;
         this.superficie = superficie;
     }
@@ -14,12 +14,12 @@ public class Country implements Comparable<Country>
         return nome;
     }
 
-    public double getSuperficie() {
+    public int getSuperficie() {
         return superficie;
     }
 
 
-    public void setSuperficie(double superficie) {
+    public void setSuperficie(int superficie) {
         this.superficie = superficie;
     }
 
@@ -33,10 +33,9 @@ public class Country implements Comparable<Country>
         return getClass().getName() + "[nome=" + nome + ", superficie=" + superficie + "]";
     }
 
+
     @Override
-    public int compareTo(Country o)
-    {
-        Country c = (Country)o;
-        return superficie == c.getSuperficie() ? 1: 0;
+    public int compareTo(Object o) {
+        return superficie - ( (Country) o).superficie;
     }
 }

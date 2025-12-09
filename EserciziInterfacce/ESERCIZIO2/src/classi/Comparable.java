@@ -1,4 +1,6 @@
 package classi;
 
-public interface Comparable {
+public interface Comparable <T>
+{
+    int compareTo(T o);
 }

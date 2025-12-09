@@ -1,4 +1,9 @@
 package classi;
 
-public interface Measurable {
+public interface Measurable
+{
+    double getMesurable();
+    String getMisurableS();
+
+
 }

@@ -8,14 +8,14 @@ public class Tester
 {
     public static void main(String []args)
     {
-        DataSetCompare compare = new DataSetCompare();
-        compare.add(new Stringhe("a"));
-        compare.add(new Stringhe("b"));
+        DataSetCompare compareStringhe = new DataSetCompare();
+        compareStringhe.add(new Stringhe("a"));
+        compareStringhe.add(new Stringhe("b"));
 
-        //Measurable max = compare.getMax();
-        //Measurable min = compare.getMin();
+        Measurable max = compareStringhe.getMax();
+        Measurable min = compareStringhe.getMin();
 
-        //System.out.println("Max: " + max.getMeasurable());
-        //System.out.println("Min: " + min.getMeasurable());
+        System.out.println("Max: " + max.getMeasurable());
+        System.out.println("Min: " + min.getMeasurable());
     }
 }

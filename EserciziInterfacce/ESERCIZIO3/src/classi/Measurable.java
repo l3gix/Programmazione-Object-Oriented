@@ -1,4 +1,7 @@
 package classi;
 
-public interface Measurable {
+public interface Measurable
+{
+    Object getMeasurable();
+    int comparable(Object other);
 }

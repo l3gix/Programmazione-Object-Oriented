@@ -1,8 +1,6 @@
 package classi;
 
-public interface Measurable
+public interface Comparator
 {
-    Object getMeasurable();
-    int compareTo(Object o);
-
+    int compare(Object obj1, Object obj2);
 }
